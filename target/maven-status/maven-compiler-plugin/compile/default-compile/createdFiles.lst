@@ -10,7 +10,6 @@ com/dsc/scheduler/lock/provider/AbstractStorageAccessor.class
 com/dsc/scheduler/config/ZkProviderConfig.class
 com/dsc/scheduler/aop/DcsScheduledAnnotationBeanPostProcessor.class
 com/dsc/scheduler/lock/provider/db/MySqlServerTimeStatementsSource.class
-com/dsc/scheduler/lock/LockAssert$TestHelper.class
 com/dsc/scheduler/aop/MethodProxyScheduledLockAdvisor$LockingInterceptor.class
 com/dsc/scheduler/lock/AbstractSimpleLock.class
 com/dsc/scheduler/lock/LockingTaskExecutor$Task.class

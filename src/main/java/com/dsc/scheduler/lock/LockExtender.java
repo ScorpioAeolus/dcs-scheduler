@@ -26,6 +26,8 @@ public final class LockExtender {
      *             when there is no active lock in the thread local
      * @throws UnsupportedOperationException
      *             when the LockProvider does not support lock extension.
+     * @param lockAtLeastFor least
+     * @param lockAtMostFor most
      */
     public static void extendActiveLock(Duration lockAtMostFor, Duration lockAtLeastFor) {
         SimpleLock lock = locks().peekLast();

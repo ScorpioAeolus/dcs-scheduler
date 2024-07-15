@@ -113,6 +113,7 @@ public class DcsCronTrigger implements Trigger {
 
 	/**
 	 * Return the cron pattern that this trigger has been built with.
+	 * @return string
 	 */
 	public String getExpression() {
 		return this.expression.toString();

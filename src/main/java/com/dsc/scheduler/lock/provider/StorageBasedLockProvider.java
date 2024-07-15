@@ -62,6 +62,8 @@ public class StorageBasedLockProvider implements ExtensibleLockProvider {
 
     /**
      * Sets lockUntil according to LockConfiguration if current lockUntil &lt;= now
+     * @param lockConfiguration lock config
+     * @return boolean
      */
     protected boolean doLock(LockConfiguration lockConfiguration) {
         String name = lockConfiguration.getName();

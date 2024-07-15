@@ -63,6 +63,9 @@ public class DcsScheduledMethodRunnable implements Runnable {
 	 * calling the specified method.
 	 * @param target the target instance to call the method on
 	 * @param method the target method to call
+	 * @param scheduled annotation
+	 * @param elce elce
+	 * @param lte lte
 	 */
 	public DcsScheduledMethodRunnable(Object target, Method method, DcsScheduled scheduled, ExtendedLockConfigurationExtractor elce, LockingTaskExecutor lte) {
 		this.target = target;
@@ -81,6 +84,9 @@ public class DcsScheduledMethodRunnable implements Runnable {
 	 * calling the specified method by name.
 	 * @param target the target instance to call the method on
 	 * @param methodName the name of the target method
+	 * @param elce elce
+	 * @param lte lte
+	 * @param scheduled DcsScheduled
 	 * @throws NoSuchMethodException if the specified method does not exist
 	 */
 	public DcsScheduledMethodRunnable(Object target, String methodName,DcsScheduled scheduled,ExtendedLockConfigurationExtractor elce,LockingTaskExecutor lte) throws NoSuchMethodException {
@@ -97,6 +103,8 @@ public class DcsScheduledMethodRunnable implements Runnable {
 
 	/**
 	 * Return the target instance to call the method on.
+	 *
+	 * @return object
 	 */
 	public Object getTarget() {
 		return this.target;
@@ -104,6 +112,7 @@ public class DcsScheduledMethodRunnable implements Runnable {
 
 	/**
 	 * Return the target method to call.
+	 * @return Method
 	 */
 	public Method getMethod() {
 		return this.method;

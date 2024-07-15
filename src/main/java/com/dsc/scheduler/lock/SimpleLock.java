@@ -39,6 +39,9 @@ public interface SimpleLock {
      *             if the lock has already been unlocked or extended
      * @throws UnsupportedOperationException
      *             if the lock extension is not supported by LockProvider.
+     *
+     * @param lockAtLeastFor least
+     * @param lockAtMostFor most
      */
     default Optional<SimpleLock> extend(Duration lockAtMostFor, Duration lockAtLeastFor) {
         throw new UnsupportedOperationException();

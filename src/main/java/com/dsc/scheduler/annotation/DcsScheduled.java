@@ -155,10 +155,14 @@ public @interface DcsScheduled {
 	 * {@link #fixedRateString}, or {@link #initialDelayString}.
 	 * @return the {@code TimeUnit} to use
 	 * @since 5.3.10
+	 * @return string
 	 */
 	TimeUnit timeUnit() default TimeUnit.MILLISECONDS;
 
-	/** Lock name. */
+	/** Lock name.
+	 *
+	 * @return  string
+	 */
 	String name() default "";
 
 	/**
@@ -169,6 +173,7 @@ public @interface DcsScheduled {
 	 * <p>
 	 * Can be either time with suffix like 10s or ISO8601 duration as described in
 	 * {@link java.time.Duration#parse(CharSequence)}, for example PT30S.
+	 * @return  string
 	 */
 	String lockAtMostFor() default "";
 
@@ -183,6 +188,7 @@ public @interface DcsScheduled {
 	 * <p>
 	 * Can be either time with suffix like 10s or ISO8601 duration as described in
 	 * {@link java.time.Duration#parse(CharSequence)}, for example PT30S.
+	 * @return string
 	 */
 	String lockAtLeastFor() default "";
 

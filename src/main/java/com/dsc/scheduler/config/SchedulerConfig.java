@@ -12,7 +12,6 @@ import org.springframework.scheduling.support.TaskUtils;
 
 /**
  * @author typhoon
- * @date 2024/7/14 6:01 下午
  **/
 public class SchedulerConfig {
 

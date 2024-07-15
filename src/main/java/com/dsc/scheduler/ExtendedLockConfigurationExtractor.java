@@ -21,6 +21,12 @@ import java.lang.reflect.Method;
 import java.util.Optional;
 
 public interface ExtendedLockConfigurationExtractor extends LockConfigurationExtractor {
-    /** Extracts lock configuration for given method */
+    /** Extracts lock configuration for given method
+     *
+     * @param method method
+     * @param object object
+     * @param parameterValues values
+     * @return optional
+     */
     Optional<LockConfiguration> getLockConfiguration(Object object, Method method, Object[] parameterValues);
 }

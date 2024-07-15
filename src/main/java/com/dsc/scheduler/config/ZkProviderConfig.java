@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 
 /**
  * @author typhoon
- * @date 2024/7/14 7:00 下午
  **/
 public class ZkProviderConfig {
 

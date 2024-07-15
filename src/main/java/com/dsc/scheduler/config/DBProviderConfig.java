@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 
 /**
  * @author typhoon
- * @date 2024/7/14 5:59 下午
  **/
 @Slf4j
 public class DBProviderConfig {

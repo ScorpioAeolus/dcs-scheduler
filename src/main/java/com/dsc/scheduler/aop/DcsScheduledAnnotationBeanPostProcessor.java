@@ -148,6 +148,9 @@ public class DcsScheduledAnnotationBeanPostProcessor
 
 	/**
 	 * Create a default {@code ScheduledAnnotationBeanPostProcessor}.
+	 *
+	 * @param extendedLockConfigurationExtractor extractor
+	 * @param lockingTaskExecutor executor
 	 */
 	public DcsScheduledAnnotationBeanPostProcessor(ExtendedLockConfigurationExtractor extendedLockConfigurationExtractor,LockingTaskExecutor lockingTaskExecutor) {
 		this.registrar = new ScheduledTaskRegistrar();
@@ -183,6 +186,8 @@ public class DcsScheduledAnnotationBeanPostProcessor
 	 * a {@link ScheduledExecutorService} bean. If neither of the two is resolvable,
 	 * a local single-threaded default scheduler will be created within the registrar.
 	 * @see #DEFAULT_TASK_SCHEDULER_BEAN_NAME
+	 *
+	 * @param scheduler scheduler
 	 */
 	public void setScheduler(Object scheduler) {
 		this.scheduler = scheduler;
@@ -530,6 +535,9 @@ public class DcsScheduledAnnotationBeanPostProcessor
 	 * @param method the scheduled method to call
 	 * @since 5.1
 	 * @see ScheduledMethodRunnable#ScheduledMethodRunnable(Object, Method)
+	 *
+	 * @param scheduled annotation
+	 * @return runnable
 	 */
 	protected Runnable createRunnable(Object target, Method method,DcsScheduled scheduled) {
 		String name = scheduled.name();

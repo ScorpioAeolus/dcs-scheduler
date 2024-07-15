@@ -222,6 +222,8 @@ public class JdbcTemplateLockProvider extends StorageBasedLockProvider {
 
             /**
              * Value stored in 'locked_by' column. Please use only for debugging purposes.
+             * @param lockedBy who get the lock
+             * @return  builder
              */
             public Builder withLockedByValue(String lockedBy) {
                 this.lockedByValue = lockedBy;
@@ -236,6 +238,8 @@ public class JdbcTemplateLockProvider extends StorageBasedLockProvider {
             /**
              * Sets the isolation level for ShedLock. See {@link java.sql.Connection} for
              * constant definitions. for constant definitions
+             * @param isolationLevel level
+             * @return builder
              */
             public Builder withIsolationLevel(int isolationLevel) {
                 this.isolationLevel = isolationLevel;

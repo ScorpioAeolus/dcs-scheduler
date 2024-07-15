@@ -64,26 +64,4 @@ public final class LockAssert {
         }
     }
 
-    public static class TestHelper {
-
-        private static final String TEST_LOCK_NAME = "net.javacrumbs.shedlock.core.test-lock";
-
-        /**
-         * If pass is set to true, all LockAssert.assertLocked calls in current thread
-         * will pass. To be used in unit tests only <code>
-         * LockAssert.TestHelper.makeAllAssertsPass(true)
-         * </code>
-         */
-        public static void makeAllAssertsPass(boolean pass) {
-            if (pass) {
-                if (!LockAssert.alreadyLockedBy(TEST_LOCK_NAME)) {
-                    LockAssert.startLock(TEST_LOCK_NAME);
-                }
-            } else {
-                if (LockAssert.alreadyLockedBy(TEST_LOCK_NAME)) {
-                    LockAssert.endLock();
-                }
-            }
-        }
-    }
 }

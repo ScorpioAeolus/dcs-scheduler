@@ -17,12 +17,28 @@ package com.dsc.scheduler.lock;
 import com.dsc.scheduler.support.Nullable;
 
 public interface LockingTaskExecutor {
-    /** Executes task if it's not already running. */
+    /** Executes task if it's not already running.
+     * @param lockConfig config
+     * @param task task
+     */
     void executeWithLock(Runnable task, LockConfiguration lockConfig);
 
+    /**
+     *
+     * @param task task
+     * @param lockConfig lockConfig
+     * @throws Throwable throwable
+     */
     void executeWithLock(Task task, LockConfiguration lockConfig) throws Throwable;
 
-    /** Executes task. */
+    /** Executes task.
+     *
+     * @param lockConfig config
+     * @param task task
+     * @param <T> genericity
+     * @throws UnsupportedOperationException not support operation
+     * @return  task result
+     */
     default <T> TaskResult<T> executeWithLock(TaskWithResult<T> task, LockConfiguration lockConfig) throws Throwable {
         throw new UnsupportedOperationException();
     }

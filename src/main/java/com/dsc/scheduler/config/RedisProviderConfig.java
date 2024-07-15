@@ -9,7 +9,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 
 /**
  * @author typhoon
- * @date 2024/7/14 6:43 下午
  **/
 public class RedisProviderConfig {
 

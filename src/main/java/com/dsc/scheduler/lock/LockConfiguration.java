@@ -44,10 +44,10 @@ public class LockConfiguration {
      * lockAtLeastFor (currently it's only JdbcTemplateLockProvider). Second type of
      * lock provider uses absolute time calculated from `createdAt`.
      *
-     * @param createdAt
-     * @param name
-     * @param lockAtMostFor
-     * @param lockAtLeastFor
+     * @param createdAt create time
+     * @param name lock name
+     * @param lockAtMostFor master lock time
+     * @param lockAtLeastFor least lock time
      */
     public LockConfiguration(Instant createdAt, String name, Duration lockAtMostFor, Duration lockAtLeastFor) {
         this.createdAt = Objects.requireNonNull(createdAt);
@@ -77,7 +77,10 @@ public class LockConfiguration {
         return createdAt.plus(lockAtLeastFor);
     }
 
-    /** Returns either now or lockAtLeastUntil whichever is later. */
+    /** Returns either now or lockAtLeastUntil whichever is later.
+     *
+     * @return Instant unlock time
+     */
     public Instant getUnlockTime() {
         Instant now = ClockProvider.now();
         Instant lockAtLeastUntil = getLockAtLeastUntil();

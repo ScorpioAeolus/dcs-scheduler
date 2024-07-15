@@ -18,7 +18,6 @@ package com.dsc.scheduler.annotation;
 
 import com.dsc.scheduler.aop.DcsScheduledAnnotationBeanPostProcessor;
 import com.dsc.scheduler.aop.DcsSchedulerConfigurationSelector;
-import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.Ordered;
 import org.springframework.scheduling.Trigger;
@@ -53,8 +52,6 @@ public @interface EnableDcsScheduling {
     /**
      * 中心化模式
      *
-     * @author typhoon
-     * @date 2022-07-12 15:26 Tuesday
      **/
     enum ProviderModel {
 
@@ -78,7 +75,7 @@ public @interface EnableDcsScheduling {
     /**
      * provider 模式
      *
-     * @return
+     * @return model
      */
     ProviderModel providerModel();
 
@@ -90,6 +87,7 @@ public @interface EnableDcsScheduling {
      * just a fallback, under normal circumstances the lock is released as soon the
      * tasks finishes. Set this to some value much higher than normal task duration.
      * Can be overridden in each ScheduledLock annotation.
+     * @return string
      */
     String defaultLockAtMostFor();
 
@@ -103,20 +101,22 @@ public @interface EnableDcsScheduling {
      * another). By setting this parameter, you can make sure that the lock will be
      * kept at least for given period of time. Can be overridden in each
      * ScheduledLock annotation.
+     * @return string
      */
     String defaultLockAtLeastFor() default "PT0S";
 
-    /**
-     * <p>
-     * Indicate how advice should be applied.
-     */
-    AdviceMode mode() default AdviceMode.PROXY;
-
-    /**
-     * Indicate whether subclass-based (CGLIB) proxies are to be created as opposed
-     * to standard Java interface-based proxies.
-     */
-    boolean proxyTargetClass() default false;
+//    /**
+//     * <p>
+//     * Indicate how advice should be applied.
+//     * @return mode
+//     */
+//    AdviceMode mode() default AdviceMode.PROXY;
+//
+//    /**
+//     * Indicate whether subclass-based (CGLIB) proxies are to be created as opposed
+//     * to standard Java interface-based proxies.
+//     */
+//    boolean proxyTargetClass() default false;
 
     /**
      * Indicate the ordering of the execution of the locking advisor when multiple
@@ -124,6 +124,7 @@ public @interface EnableDcsScheduling {
      *
      * <p>
      * The default is {@link Ordered#LOWEST_PRECEDENCE}.
+     * @return  int
      */
     int order() default Ordered.LOWEST_PRECEDENCE;
 
