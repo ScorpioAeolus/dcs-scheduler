@@ -48,7 +48,7 @@ public @interface DcsScheduled {
 	 * @since 5.1
 	 * @see ScheduledTaskRegistrar#CRON_DISABLED
 	 */
-	String CRON_DISABLED = ScheduledTaskRegistrar.CRON_DISABLED;
+	String CRON_DISABLED = "-";
 
 
 	/**
