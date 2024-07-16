@@ -1,0 +1,12 @@
+target/
+.classpath
+.idea
+*.iml
+.project
+.settings/
+.gradle/
+build/
+.attach_pid*
+micronaut/micronaut-test/dependency-reduced-pom.xml
+dependency-reduced-pom.xml
+.vscode/settings.json
