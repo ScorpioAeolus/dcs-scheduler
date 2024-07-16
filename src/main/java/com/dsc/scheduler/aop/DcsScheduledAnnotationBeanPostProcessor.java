@@ -373,7 +373,7 @@ public class DcsScheduledAnnotationBeanPostProcessor
 			Map<Method, Set<DcsScheduled>> annotatedMethods = MethodIntrospector.selectMethods(targetClass,
 					(MethodIntrospector.MetadataLookup<Set<DcsScheduled>>) method -> {
 						Set<DcsScheduled> scheduledAnnotations = AnnotatedElementUtils.getMergedRepeatableAnnotations(
-								method, DcsScheduled.class, DcsScheduled.class);
+								method, DcsScheduled.class, DcsSchedules.class);
 						return (!scheduledAnnotations.isEmpty() ? scheduledAnnotations : null);
 					});
 			if (annotatedMethods.isEmpty()) {

@@ -16,7 +16,6 @@
 
 package com.dsc.scheduler.annotation;
 
-import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -46,7 +45,6 @@ public @interface DcsScheduled {
 	 * <p>This is primarily meant for use with <code>${...}</code> placeholders,
 	 * allowing for external disabling of corresponding scheduled methods.
 	 * @since 5.1
-	 * @see ScheduledTaskRegistrar#CRON_DISABLED
 	 */
 	String CRON_DISABLED = "-";
 
@@ -69,7 +67,8 @@ public @interface DcsScheduled {
 	 * trigger, primarily meant for externally specified values resolved by a
 	 * <code>${...}</code> placeholder.
 	 * @return an expression that can be parsed to a cron schedule
-	 * @see org.springframework.scheduling.support.CronExpression#parse(String)
+	 * #@see org.springframework.scheduling.support.CronExpression#parse(String)
+	 * @see org.springframework.scheduling.support.CronSequenceGenerator
 	 */
 	String cron() default "";
 

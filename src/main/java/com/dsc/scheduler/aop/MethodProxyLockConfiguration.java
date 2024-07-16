@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Role;
 
-@Configuration
+//@Configuration
 @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
 @Deprecated
 class MethodProxyLockConfiguration extends AbstractLockConfiguration {
