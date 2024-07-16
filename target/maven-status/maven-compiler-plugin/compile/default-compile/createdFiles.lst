@@ -35,6 +35,7 @@ com/dsc/scheduler/aop/LockConfigurationExtractorConfiguration.class
 com/dsc/scheduler/lock/LockExtender$LockCanNotBeExtendedException.class
 com/dsc/scheduler/config/SchedulerConfig.class
 com/dsc/scheduler/aop/SpringLockConfigurationExtractor$SimpleParameterNameDiscoverer.class
+com/dsc/scheduler/util/EnhanceAnnotationUtil.class
 com/dsc/scheduler/App.class
 com/dsc/scheduler/lock/LockAssert.class
 com/dsc/scheduler/lock/SimpleLock.class

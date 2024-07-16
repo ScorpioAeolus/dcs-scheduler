@@ -21,6 +21,7 @@ import com.dsc.scheduler.annotation.DcsScheduled;
 import com.dsc.scheduler.annotation.DcsSchedules;
 import com.dsc.scheduler.lock.LockingTaskExecutor;
 import com.dsc.scheduler.support.DcsScheduledMethodRunnable;
+import com.dsc.scheduler.util.EnhanceAnnotationUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.aop.framework.AopInfrastructureBean;
@@ -47,7 +48,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.MethodIntrospector;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotatedElementUtils;
-import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.lang.Nullable;
 import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.Trigger;
@@ -369,7 +369,7 @@ public class DcsScheduledAnnotationBeanPostProcessor
 
 		Class<?> targetClass = AopProxyUtils.ultimateTargetClass(bean);
 		if (!this.nonAnnotatedClasses.contains(targetClass) &&
-				AnnotationUtils.isCandidateClass(targetClass, Arrays.asList(DcsScheduled.class, DcsSchedules.class))) {
+				EnhanceAnnotationUtil.isCandidateClass(targetClass, Arrays.asList(DcsScheduled.class, DcsSchedules.class))) {
 			Map<Method, Set<DcsScheduled>> annotatedMethods = MethodIntrospector.selectMethods(targetClass,
 					(MethodIntrospector.MetadataLookup<Set<DcsScheduled>>) method -> {
 						Set<DcsScheduled> scheduledAnnotations = AnnotatedElementUtils.getMergedRepeatableAnnotations(
