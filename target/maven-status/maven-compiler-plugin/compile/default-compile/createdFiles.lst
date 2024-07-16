@@ -23,7 +23,6 @@ com/dsc/scheduler/lock/LockingTaskExecutor$TaskWithResult.class
 com/dsc/scheduler/lock/provider/db/DatabaseProduct.class
 com/dsc/scheduler/support/Nullable.class
 com/dsc/scheduler/annotation/DcsScheduled.class
-com/dsc/scheduler/support/DcsCronTrigger.class
 com/dsc/scheduler/lock/provider/LockRecordRegistry.class
 com/dsc/scheduler/aop/SpringLockConfigurationExtractor.class
 com/dsc/scheduler/aop/SpringLockConfigurationExtractor$1.class

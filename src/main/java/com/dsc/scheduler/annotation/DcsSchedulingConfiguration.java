@@ -41,7 +41,7 @@ import org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProc
  * @see EnableDcsScheduling
  * @see DcsScheduledAnnotationBeanPostProcessor
  */
-@Configuration(proxyBeanMethods = false)
+@Configuration
 @Role(BeanDefinition.ROLE_INFRASTRUCTURE)
 public class DcsSchedulingConfiguration {
 
