@@ -16,9 +16,6 @@
 
 package com.dsc.scheduler.annotation;
 
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor;
-import org.springframework.scheduling.annotation.Schedules;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
 import java.lang.annotation.Documented;
@@ -34,13 +31,14 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Typhoon
  * @since 3.0
- * @see EnableScheduling
- * @see ScheduledAnnotationBeanPostProcessor
- * @see Schedules
+ * @see EnableDcsScheduling
+ * @see com.dsc.scheduler.aop.DcsScheduledAnnotationBeanPostProcessor
+ * @see DcsSchedules
  */
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
+@Repeatable(DcsSchedules.class)
 public @interface DcsScheduled {
 
 	/**
