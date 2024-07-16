@@ -51,6 +51,12 @@ CREATE TABLE shedlock(name VARCHAR(64) NOT NULL, lock_until TIMESTAMP(3) NOT NUL
 and you should also expose the bean of the Data Source.
 
 for redis,you should expose the bean of the RedisConnectionFactory.
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+</dependency>
+```
 
 for zookeeper,you should expose the bean of the CuratorFramework:
 ```
