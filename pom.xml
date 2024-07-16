@@ -14,8 +14,8 @@
 
   <groupId>io.github.scorpioaeolus</groupId>
   <artifactId>dcs-scheduler</artifactId>
-<!--  <version>1.0.3.RELEASE</version>-->
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.3.RELEASE</version>
+<!--  <version>1.0.3-SNAPSHOT</version>-->
 
   <name>dcs-scheduler</name>
   <description>dcs-scheduler</description>
