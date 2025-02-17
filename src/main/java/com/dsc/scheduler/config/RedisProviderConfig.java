@@ -17,6 +17,10 @@ public class RedisProviderConfig {
 
     @Bean
     public LockProvider lockProvider(RedisConnectionFactory connectionFactory) {
-        return new RedisLockProvider(connectionFactory, environment.getActiveProfiles()[0]);
+        String env = "default";
+        if(null != environment.getActiveProfiles() && environment.getActiveProfiles().length > 0) {
+            env = environment.getActiveProfiles()[0];
+        }
+        return new RedisLockProvider(connectionFactory, env);
     }
 }
